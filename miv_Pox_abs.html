@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movimientos de una caja con vlores absolutos</title>
+    <style>
+        #grande {
+
+            background-color: #666;
+            text-align: center;
+
+
+        }
+
+        #square {
+            position: absolute;
+            top: 250px;
+            
+            left: 200px;
+            width: 300px;
+            height: 300px;
+            border: 1px solid #666;
+            background-color: #BB00BB;
+            color: #ffffff;
+            text-align: center;
+            padding: auto;
+            display: inline-block;
+            text-decoration: none;
+
+
+        }
+    </style>
+    <script>
+
+        var x = 200; y = 250;
+        function pos(dx, dy) {
+
+            if (!document.getElementById) {
+
+                return;
+            }
+            x += 10 * dx;
+            y += 10 * dy;
+
+            obj = document.getElementById("square");
+            obj.style.top = y + "px";
+
+            obj.style.left = x + "px";
+        }
+
+        function hideSquare() {
+            if (!document.getElementById) {
+                return;
+            }
+
+            obj = document.getElementById("square");
+            obj.style.display = "none";
+        }
+        function showSquare() {
+            if (!document.getElementById) {
+                return;
+            }
+            obj = document.getElementById("square");
+            obj.style.display = "block";
+        }
+
+    </script>
+
+<body>
+    <div id="grande">
+        <h1>Posiciones de la caja</h1>
+
+        <hr>
+        <form name="form1">
+
+            <input type="button" name="left" value="Izquierda" onclick="pos(-1,0);">
+            <input type="button" name="right" value="Derecha" onclick="pos(1,0);">
+            <input type="button" name="up" value="Arriba" onclick="pos(0,-1);">
+            <input type="button" name="down" value="Abajo" onclick="pos(0,1);">
+            <input type="button" name="hide" value="Esconder" onclick="hideSquare();">
+            <input type="button" name="show" value="Mostrar" onclick="showSquare();">
+        </form>
+        <hr>
+        <div id="square">
+
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Sapiente distinctio libero,
+                aut odio alias ipsa itaque amet exercitationem,
+                delectus ex magnam suscipit doloribus.
+                Aliquam ea voluptas commodi voluptates error obcaecati.
+            </p>
+
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>
